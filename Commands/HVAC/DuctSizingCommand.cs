@@ -10,6 +10,9 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using DanBIMTools.Core;
 
+// Resolve WPF/Revit TextBox ambiguity
+using WpfTextBox = System.Windows.Controls.TextBox;
+
 namespace DanBIMTools.Commands.HVAC
 {
     [Transaction(TransactionMode.Manual)]
@@ -121,7 +124,7 @@ namespace DanBIMTools.Commands.HVAC
                 FontWeight = FontWeights.Bold 
             });
             stack.Children.Add(new TextBlock { Text = "Luftmængde (L/s):" });
-            var input = new TextBox { Text = "500", Margin = new Thickness(0, 5, 0, 10) };
+            var input = new WpfTextBox { Text = "500", Margin = new Thickness(0, 5, 0, 10) };
             stack.Children.Add(input);
 
             var btnPanel = new StackPanel { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right };
