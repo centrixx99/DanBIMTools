@@ -6,6 +6,6 @@
     <AddInId>4F8A9B1C-2D3E-4F5A-9B8C-7D6E5F4A3B2C</AddInId>
     <FullClassName>DanBIMTools.App</FullClassName>
     <VendorId>DANBIM</VendorId>
-    <VendorDescription>Danish BIM Tools for Revit - v1.4.0</VendorDescription>
+    <VendorDescription>Danish BIM Tools for Revit - v1.5.0</VendorDescription>
   </AddIn>
 </AddIns>
