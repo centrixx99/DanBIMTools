@@ -1,0 +1,163 @@
+{
+  "version": "BR18-2024",
+  "description": "Lydkrav (Acoustic requirements) per Bygningsreglementet 2018",
+  "regulations": [
+    {
+      "code": "BR18-L1",
+      "name": "Lydisolation mellem boliger",
+      "description": "Airborne and impact sound insulation between dwellings",
+      "appliesTo": ["Walls", "Floors"],
+      "requirements": [
+        {
+          "scenario": "Væg mellem boliger",
+          "airborneSoundInsulationRw": 55,
+          "minValue": 52,
+          "fieldMeasurementRequirement": "R'w ≥ 53 dB"
+        },
+        {
+          "scenario": "Etagedæk mellem boliger",
+          "airborneSoundInsulationRw": 55,
+          "impactSoundLevelLn": 53,
+          "minValue": 52,
+          "fieldMeasurementRequirement": "R'w ≥ 53 dB, L'n,w ≤ 58 dB"
+        },
+        {
+          "scenario": "Væg mellem bolig og trappe",
+          "airborneSoundInsulationRw": 55,
+          "minValue": 52
+        },
+        {
+          "scenario": "Væg mellem bolig og teknisk rum",
+          "airborneSoundInsulationRw": 55,
+          "minValue": 52
+        }
+      ]
+    },
+    {
+      "code": "BR18-L2",
+      "name": "Lydisolation fra trafikstøj",
+      "description": "Facade sound insulation against external noise",
+      "appliesTo": ["Walls", "Windows", "Doors"],
+      "facadeRequirements": [
+        {
+          "category": "Boliger",
+          "maxLevelInside": 30,
+          "unit": "dB",
+          "measurement": "Lden (day-evening-night)",
+          "notes": "Free-field noise level at facade"
+        },
+        {
+          "category": "Kontorer",
+          "maxLevelInside": 35,
+          "unit": "dB",
+          "measurement": "Lden"
+        },
+        {
+          "category": "Hospitaler",
+          "maxLevelInside": 30,
+          "unit": "dB",
+          "measurement": "Lden"
+        }
+      ],
+      "elementRequirements": {
+        "facade": {
+          "RwMinimum": 30,
+          "notes": "Minimum facade insulation"
+        },
+        "window": {
+          "RwStandard": 30,
+          "RwHighTraffic": 35,
+          "RwVeryHighTraffic": 40
+        },
+        "door": {
+          "RwStandard": 25,
+          "RwHighRequirement": 30
+        }
+      }
+    },
+    {
+      "code": "BR18-L3",
+      "name": "Stødlyd fra installationer",
+      "description": "Impact sound from building services",
+      "appliesTo": ["Ducts", "Pipes", "Mechanical Equipment"],
+      "requirements": [
+        {
+          "element": "Ventilationskanaler",
+          "maxLevel": 30,
+          "unit": "dB",
+          "location": "Boligrum",
+          "notes": "Skal dæmpes eller isoleres"
+        },
+        {
+          "element": "VVS-installationer",
+          "maxLevel": 30,
+          "unit": "dB",
+          "location": "Boligrum",
+          "notes": "Isolering af rør og armaturer"
+        },
+        {
+          "element": "Elevatorer",
+          "maxLevel": 35,
+          "unit": "dB",
+          "location": "Boligrum",
+          "notes": "Stødisoleret montage"
+        }
+      ]
+    },
+    {
+      "code": "BR18-L4",
+      "name": "Trappelyd",
+      "description": "Staircase noise requirements",
+      "appliesTo": ["Stairs", "Floors"],
+      "requirements": {
+        "maxImpactSoundLevel": 58,
+        "unit": "dB",
+        "measurement": "L'n,w",
+        "notes": "Measured in adjacent dwellings"
+      }
+    }
+  ],
+  "acousticRatings": {
+    "Rw": {
+      "description": "Airborne sound insulation",
+      "unit": "dB",
+      "higherIsBetter": true,
+      "typicalValues": {
+        "Light partition": 30,
+        "Standard wall": 45,
+        "Good wall": 55,
+        "Excellent wall": 65
+      }
+    },
+    "Ln,w": {
+      "description": "Weighted normalized impact sound pressure level",
+      "unit": "dB",
+      "higherIsBetter": false,
+      "typicalValues": {
+        "Bare concrete": 85,
+        "Floating floor": 65,
+        "Good floor": 53,
+        "Excellent floor": 45
+      }
+    }
+  },
+  "elementAcousticRequirements": {
+    "Væg mellem boliger": {
+      "Rw": "55 dB",
+      "notes": "Minimum requirement"
+    },
+    "Etagedæk": {
+      "Rw": "55 dB",
+      "Ln,w": "53 dB",
+      "notes": "Both airborne and impact"
+    },
+    "Vinduer": {
+      "Rw": "30-40 dB",
+      "notes": "Afhænger af trafikstøj"
+    },
+    "Døre": {
+      "Rw": "25-30 dB",
+      "notes": "Yderdøre vs innerdøre"
+    }
+  }
+}

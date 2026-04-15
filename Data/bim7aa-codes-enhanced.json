@@ -1,0 +1,434 @@
+{
+  "version": "3.2",
+  "source": "BIM7AA Typekodning V3.2 (2017)",
+  "description": "Dansk bygningsdel typekodningssystem baseret på BIM7AA",
+  "totalCodes": 64,
+  "categories": [
+    {
+      "code": "0",
+      "name": "Generiske objekter"
+    },
+    {
+      "code": "1",
+      "name": "Bygningsbasis"
+    },
+    {
+      "code": "2",
+      "name": "Primære bygningsdele"
+    },
+    {
+      "code": "3",
+      "name": "Kompletterende bygningsdele"
+    },
+    {
+      "code": "4",
+      "name": "Overfladebygningsdele"
+    },
+    {
+      "code": "5",
+      "name": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "6",
+      "name": "El- og mekaniske anlæg"
+    },
+    {
+      "code": "7",
+      "name": "Inventar og teknisk udstyr"
+    },
+    {
+      "code": "8",
+      "name": "Beplantning og belægning"
+    },
+    {
+      "code": "9",
+      "name": "Projektudstyr"
+    }
+  ],
+  "codes": [
+    {
+      "code": "01",
+      "name": "Generiske objekter ARK",
+      "level": 2,
+      "category": "Generiske objekter"
+    },
+    {
+      "code": "02",
+      "name": "Generiske objekter KON",
+      "level": 2,
+      "category": "Generiske objekter"
+    },
+    {
+      "code": "03",
+      "name": "Generiske objekter VENT",
+      "level": 2,
+      "category": "Generiske objekter"
+    },
+    {
+      "code": "04",
+      "name": "Generiske objekter VVS",
+      "level": 2,
+      "category": "Generiske objekter"
+    },
+    {
+      "code": "05",
+      "name": "Generiske objekter EL",
+      "level": 2,
+      "category": "Generiske objekter"
+    },
+    {
+      "code": "06",
+      "name": "Generiske objekter LAND",
+      "level": 2,
+      "category": "Generiske objekter"
+    },
+    {
+      "code": "07",
+      "name": "Generiske objekter Entreprenør/Leverandør",
+      "level": 2,
+      "category": "Generiske objekter"
+    },
+    {
+      "code": "10",
+      "name": "Terræn",
+      "level": 2,
+      "category": "Bygningsbasis"
+    },
+    {
+      "code": "12",
+      "name": "Fundamenter",
+      "level": 2,
+      "category": "Bygningsbasis"
+    },
+    {
+      "code": "13",
+      "name": "Bygning",
+      "level": 2,
+      "category": "Bygningsbasis"
+    },
+    {
+      "code": "18",
+      "name": "Bygningsbasis bygning, øvrige",
+      "level": 2,
+      "category": "Bygningsbasis"
+    },
+    {
+      "code": "20",
+      "name": "Terræn",
+      "level": 2,
+      "category": "Primære bygningsdele"
+    },
+    {
+      "code": "21",
+      "name": "Ydervægge",
+      "level": 2,
+      "category": "Primære bygningsdele"
+    },
+    {
+      "code": "22",
+      "name": "Indervægge",
+      "level": 2,
+      "category": "Primære bygningsdele"
+    },
+    {
+      "code": "24",
+      "name": "Trapper og ramper",
+      "level": 2,
+      "category": "Primære bygningsdele"
+    },
+    {
+      "code": "25",
+      "name": "Bærende bjælker og søjler",
+      "level": 2,
+      "category": "Primære bygningsdele"
+    },
+    {
+      "code": "26",
+      "name": "Altaner og altangange",
+      "level": 2,
+      "category": "Primære bygningsdele"
+    },
+    {
+      "code": "27",
+      "name": "Tage",
+      "level": 2,
+      "category": "Primære bygningsdele"
+    },
+    {
+      "code": "28",
+      "name": "Primære bygningsdele, øvrige",
+      "level": 2,
+      "category": "Primære bygningsdele"
+    },
+    {
+      "code": "30",
+      "name": "Terræn",
+      "level": 2,
+      "category": "Kompletterende bygningsdele"
+    },
+    {
+      "code": "31",
+      "name": "Ydervægge",
+      "level": 2,
+      "category": "Kompletterende bygningsdele"
+    },
+    {
+      "code": "32",
+      "name": "Indervægge",
+      "level": 2,
+      "category": "Kompletterende bygningsdele"
+    },
+    {
+      "code": "34",
+      "name": "Trapper og ramper",
+      "level": 2,
+      "category": "Kompletterende bygningsdele"
+    },
+    {
+      "code": "35",
+      "name": "Lofter",
+      "level": 2,
+      "category": "Kompletterende bygningsdele"
+    },
+    {
+      "code": "36",
+      "name": "Altaner",
+      "level": 2,
+      "category": "Kompletterende bygningsdele"
+    },
+    {
+      "code": "37",
+      "name": "Tage",
+      "level": 2,
+      "category": "Kompletterende bygningsdele"
+    },
+    {
+      "code": "41",
+      "name": "Udvendige vægge",
+      "level": 2,
+      "category": "Overfladebygningsdele"
+    },
+    {
+      "code": "42",
+      "name": "Indvendige vægge",
+      "level": 2,
+      "category": "Overfladebygningsdele"
+    },
+    {
+      "code": "43",
+      "name": "Dæk og gulve",
+      "level": 2,
+      "category": "Overfladebygningsdele"
+    },
+    {
+      "code": "44",
+      "name": "Trapper og ramper",
+      "level": 2,
+      "category": "Overfladebygningsdele"
+    },
+    {
+      "code": "45",
+      "name": "Lofter",
+      "level": 2,
+      "category": "Overfladebygningsdele"
+    },
+    {
+      "code": "46",
+      "name": "Altaner",
+      "level": 2,
+      "category": "Overfladebygningsdele"
+    },
+    {
+      "code": "47",
+      "name": "Tage",
+      "level": 2,
+      "category": "Overfladebygningsdele"
+    },
+    {
+      "code": "48",
+      "name": "Overflader bygning, øvrige",
+      "level": 2,
+      "category": "Overfladebygningsdele"
+    },
+    {
+      "code": "50",
+      "name": "VVS-anlæg, terræn",
+      "level": 2,
+      "category": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "55",
+      "name": "Køling",
+      "level": 2,
+      "category": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "56",
+      "name": "Varme",
+      "level": 2,
+      "category": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "51",
+      "name": "Logistik",
+      "level": 2,
+      "category": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "57",
+      "name": "Ventilation",
+      "level": 2,
+      "category": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "58",
+      "name": "Sprinkling",
+      "level": 2,
+      "category": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "52",
+      "name": "Afløb og sanitet",
+      "level": 2,
+      "category": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "53",
+      "name": "Vand (koldt/varmt vand, behandlet vand)",
+      "level": 2,
+      "category": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "54",
+      "name": "Luftarter (gas, trykluft, vakuum, damp)",
+      "level": 2,
+      "category": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "59",
+      "name": "Tværgående komponenter, VVS",
+      "level": 2,
+      "category": "VVS- og Ventilationsanlæg"
+    },
+    {
+      "code": "60",
+      "name": "Terræn",
+      "level": 2,
+      "category": "El- og mekaniske anlæg"
+    },
+    {
+      "code": "61",
+      "name": "Føringsveje",
+      "level": 2,
+      "category": "El- og mekaniske anlæg"
+    },
+    {
+      "code": "62",
+      "name": "Højspænding",
+      "level": 2,
+      "category": "El- og mekaniske anlæg"
+    },
+    {
+      "code": "64",
+      "name": "Kommunikation og information",
+      "level": 2,
+      "category": "El- og mekaniske anlæg"
+    },
+    {
+      "code": "65",
+      "name": "Sikring",
+      "level": 2,
+      "category": "El- og mekaniske anlæg"
+    },
+    {
+      "code": "66",
+      "name": "Bygningsautomation",
+      "level": 2,
+      "category": "El- og mekaniske anlæg"
+    },
+    {
+      "code": "67",
+      "name": "Beskyttelse",
+      "level": 2,
+      "category": "El- og mekaniske anlæg"
+    },
+    {
+      "code": "68",
+      "name": "Person- og materialetransport",
+      "level": 2,
+      "category": "El- og mekaniske anlæg"
+    },
+    {
+      "code": "63",
+      "name": "Lavspænding",
+      "level": 2,
+      "category": "El- og mekaniske anlæg"
+    },
+    {
+      "code": "70",
+      "name": "Inventar, terræn",
+      "level": 2,
+      "category": "Inventar og teknisk udstyr"
+    },
+    {
+      "code": "71",
+      "name": "Inventar, fastmonteret",
+      "level": 2,
+      "category": "Inventar og teknisk udstyr"
+    },
+    {
+      "code": "72",
+      "name": "Inventar, løst",
+      "level": 2,
+      "category": "Inventar og teknisk udstyr"
+    },
+    {
+      "code": "80",
+      "name": "Belægninger og befæstelser",
+      "level": 2,
+      "category": "Beplantning og belægning"
+    },
+    {
+      "code": "81",
+      "name": "Beplantning",
+      "level": 2,
+      "category": "Beplantning og belægning"
+    },
+    {
+      "code": "91",
+      "name": "Projektudstyr ARK",
+      "level": 2,
+      "category": "Projektudstyr"
+    },
+    {
+      "code": "92",
+      "name": "Projektudstyr KON",
+      "level": 2,
+      "category": "Projektudstyr"
+    },
+    {
+      "code": "93",
+      "name": "Projektudstyr VENT",
+      "level": 2,
+      "category": "Projektudstyr"
+    },
+    {
+      "code": "94",
+      "name": "Projektudstyr VVS",
+      "level": 2,
+      "category": "Projektudstyr"
+    },
+    {
+      "code": "95",
+      "name": "Projektudstyr EL",
+      "level": 2,
+      "category": "Projektudstyr"
+    },
+    {
+      "code": "96",
+      "name": "Projektudstyr LAND",
+      "level": 2,
+      "category": "Projektudstyr"
+    }
+  ]
+}

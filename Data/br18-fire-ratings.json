@@ -1,0 +1,165 @@
+{
+  "version": "BR18-2024",
+  "description": "Brandkrav (Fire requirements) per Bygningsreglementet 2018",
+  "regulations": [
+    {
+      "code": "BR18-K7",
+      "name": "Bærende konstruktioners brandmodstand",
+      "description": "Load-bearing elements must maintain structural integrity during fire",
+      "appliesTo": ["Walls", "Floors", "Roofs", "Structural Columns", "Structural Framing"],
+      "requirements": [
+        {
+          "buildingClass": "Klasse 1",
+          "maxHeightMeters": 5,
+          "minFireResistanceMinutes": 30,
+          "notes": "Små bygninger, lav risiko"
+        },
+        {
+          "buildingClass": "Klasse 2",
+          "maxHeightMeters": 15,
+          "minFireResistanceMinutes": 60,
+          "notes": "Kontorer, boliger op til 15m"
+        },
+        {
+          "buildingClass": "Klasse 3",
+          "maxHeightMeters": 30,
+          "minFireResistanceMinutes": 90,
+          "notes": "Højere bygninger, offentlige bygninger"
+        },
+        {
+          "buildingClass": "Klasse 4",
+          "maxHeightMeters": 999,
+          "minFireResistanceMinutes": 120,
+          "notes": "Høje bygninger, hospitals, plejehjem"
+        }
+      ]
+    },
+    {
+      "code": "BR18-K8",
+      "name": "Afskærmende konstruktioner",
+      "description": "Separating elements (fire barriers)",
+      "appliesTo": ["Walls", "Floors", "Doors", "Windows"],
+      "fireResistanceRatings": [
+        {
+          "code": "EI 15",
+          "integrityMinutes": 15,
+          "insulationMinutes": 15,
+          "useCases": ["Små skillerum", "Tekniske rum"]
+        },
+        {
+          "code": "EI 30",
+          "integrityMinutes": 30,
+          "insulationMinutes": 30,
+          "useCases": ["Kontorrum", "Almindelige rum"]
+        },
+        {
+          "code": "EI 45",
+          "integrityMinutes": 45,
+          "insulationMinutes": 45,
+          "useCases": ["Boligadskillelse", "Skoler"]
+        },
+        {
+          "code": "EI 60",
+          "integrityMinutes": 60,
+          "insulationMinutes": 60,
+          "useCases": ["Etageadskillelse", "Trappekamre"]
+        },
+        {
+          "code": "EI 90",
+          "integrityMinutes": 90,
+          "insulationMinutes": 90,
+          "useCases": ["Højere bygninger", "Køkkener"]
+        },
+        {
+          "code": "EI 120",
+          "integrityMinutes": 120,
+          "insulationMinutes": 120,
+          "useCases": ["Hospitals", "Plejehjem", "Høje bygninger"]
+        },
+        {
+          "code": "EI 180",
+          "integrityMinutes": 180,
+          "insulationMinutes": 180,
+          "useCases": ["Kraftige konstruktioner", "Specialbyggeri"]
+        }
+      ]
+    },
+    {
+      "code": "BR18-K9",
+      "name": "Branddøre og brandvinduer",
+      "description": "Fire doors and fire windows",
+      "appliesTo": ["Doors", "Windows"],
+      "requirements": [
+        {
+          "elementType": "Branddør",
+          "fireRatings": ["E 30", "E 60", "E 90", "EI 60", "EI 90"],
+          "requirements": [
+            "Selvlukkende",
+            "Skal lukke i brand",
+            "Må ikke bremses åben"
+          ]
+        },
+        {
+          "elementType": "Brandvindue",
+          "fireRatings": ["EI 30", "EI 60", "EI 90"],
+          "requirements": [
+            "Automatisk lukning eller fast",
+            "Skal modstå brand i minimum specificeret tid"
+          ]
+        }
+      ]
+    },
+    {
+      "code": "BR18-K10",
+      "name": "Udvendige facadekonstruktioner",
+      "description": "External facade fire requirements",
+      "appliesTo": ["Walls", "Curtain Panels"],
+      "fireClassifications": [
+        {
+          "class": "A1",
+          "description": "Ikke brændbar",
+          "examples": ["Masonry", "Concrete", "Glass"],
+          "useHeight": "All heights"
+        },
+        {
+          "class": "A2-s1,d0",
+          "description": "Begrænset brændbar",
+          "examples": ["Mineral wool insulation", "Some composites"],
+          "useHeight": "Up to 22m"
+        },
+        {
+          "class": "B-s1,d0",
+          "description": "Meget begrænset bidrag til brand",
+          "examples": ["Some facade panels"],
+          "useHeight": "Up to 15m"
+        }
+      ]
+    }
+  ],
+  "elementFireRequirements": {
+    "Bærende vægge": {
+      "requiredRating": "REI 60-120",
+      "notes": "Afhænger af bygningsklasse og højde"
+    },
+    "Etagedæk": {
+      "requiredRating": "REI 60-120",
+      "notes": "Skal bære last under brand"
+    },
+    "Trappekamre": {
+      "requiredRating": "EI 60-120",
+      "notes": "Røgfri adgangsveje"
+    },
+    "Tekniske rum": {
+      "requiredRating": "EI 30-60",
+      "notes": "Afhænger af størrelse og indhold"
+    },
+    "Afskærmning mellem enheder": {
+      "requiredRating": "EI 60",
+      "notes": "Boligadskillelse"
+    },
+    "Kontorrum": {
+      "requiredRating": "EI 30-60",
+      "notes": "Afhænger af størrelse"
+    }
+  }
+}

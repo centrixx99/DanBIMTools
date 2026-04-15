@@ -1,0 +1,24 @@
+## Build artifacts
+bin/
+obj/
+deploy/
+
+## Visual Studio / Rider
+.vs/
+.idea/
+*.user
+*.suo
+*.cache
+*.log
+
+## OS files
+Thumbs.db
+.DS_Store
+
+## NuGet
+packages/
+*.nupkg
+
+## Installer packages (built separately)
+*.zip
+installer/output/

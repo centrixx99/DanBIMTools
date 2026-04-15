@@ -1,0 +1,96 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+  <!-- 
+    DanBIMTools - Multi-Version Revit Support
+    Automatically detects installed Revit version (2024/2025/2026)
+    Set RevitVersion property or let it auto-detect
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <UseWPF>true</UseWPF>
+    <OutputType>Library</OutputType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>DanBIMTools</AssemblyName>
+    <RootNamespace>DanBIMTools</RootNamespace>
+    <PlatformTarget>x64</PlatformTarget>
+    
+    <!-- Auto-detect Revit version if not specified -->
+    <RevitVersion Condition="'$(RevitVersion)' == ''">2026</RevitVersion>
+    
+    <!-- Define constants for conditional compilation -->
+    <DefineConstants>$(DefineConstants);REVIT$(RevitVersion)</DefineConstants>
+  </PropertyGroup>
+
+  <!-- Debug configuration -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+  </PropertyGroup>
+
+  <!-- 
+    SMART PATH RESOLUTION
+    Tries multiple strategies to find Revit:
+    1. REVIT_API_PATH environment variable
+    2. Standard Program Files locations
+    3. User-provided fallback
+  -->
+  <PropertyGroup>
+    <!-- Strategy 1: Environment variable override -->
+    <RevitApiPath Condition="Exists('$(REVIT_API_PATH)')">$(REVIT_API_PATH)</RevitApiPath>
+    
+    <!-- Strategy 2: Standard locations -->
+    <RevitApiPath Condition="'$(RevitApiPath)' == '' And Exists('C:\Program Files\Autodesk\Revit $(RevitVersion)\RevitAPI.dll')">C:\Program Files\Autodesk\Revit $(RevitVersion)</RevitApiPath>
+    <RevitApiPath Condition="'$(RevitApiPath)' == '' And Exists('C:\Program Files (x86)\Autodesk\Revit $(RevitVersion)\RevitAPI.dll')">C:\Program Files (x86)\Autodesk\Revit $(RevitVersion)</RevitApiPath>
+    <RevitApiPath Condition="'$(RevitApiPath)' == '' And Exists('D:\Program Files\Autodesk\Revit $(RevitVersion)\RevitAPI.dll')">D:\Program Files\Autodesk\Revit $(RevitVersion)</RevitApiPath>
+    <RevitApiPath Condition="'$(RevitApiPath)' == '' And Exists('E:\Program Files\Autodesk\Revit $(RevitVersion)\RevitAPI.dll')">E:\Program Files\Autodesk\Revit $(RevitVersion)</RevitApiPath>
+    
+    <!-- Strategy 3: Default fallback (will fail gracefully with helpful message) -->
+    <RevitApiPath Condition="'$(RevitApiPath)' == ''">$(ProgramFiles)\Autodesk\Revit $(RevitVersion)</RevitApiPath>
+  </PropertyGroup>
+
+  <!-- References with dynamic paths -->
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <HintPath>$(RevitApiPath)\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <HintPath>$(RevitApiPath)\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Data files -->
+  <ItemGroup>
+    <None Update="DanBIMTools.addin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Embedded Icons -->
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Icons\*.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <!-- Pre-build validation -->
+  <Target Name="ValidateRevitInstallation" BeforeTargets="Build">
+    <Message Importance="high" Text="DanBIMTools: Targeting Revit $(RevitVersion)" />
+    <Message Importance="high" Text="DanBIMTools: Revit API Path = $(RevitApiPath)" />
+    
+    <Warning Condition="!Exists('$(RevitApiPath)\RevitAPI.dll')" 
+             Text="Revit $(RevitVersion) not found at $(RevitApiPath). Set REVIT_API_PATH environment variable or install Revit $(RevitVersion)." />
+    
+    <Error Condition="!Exists('$(RevitApiPath)\RevitAPI.dll')" 
+           Text="Cannot build: RevitAPI.dll not found. Install Revit $(RevitVersion) or set REVIT_API_PATH environment variable to the Revit program folder." />
+  </Target>
+
+</Project>

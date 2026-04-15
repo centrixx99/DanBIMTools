@@ -1,0 +1,109 @@
+{
+  "version": "2024",
+  "description": "Danish IKT-bekendtgørelsen requirements for BIM models",
+  "requirements": [
+    {
+      "id": "IKT-001",
+      "name": "BIM7AA Classification",
+      "description": "All building elements must have BIM7AA classification codes",
+      "appliesTo": ["Walls", "Floors", "Roofs", "Doors", "Windows", "Structural Columns", "Structural Framing", "Generic Models", "Mechanical Equipment", "Ducts", "Pipes", "Electrical Equipment", "Lighting Fixtures", "Cable Trays"],
+      "parameterName": "BIM7AA_TypeCode",
+      "required": true,
+      "check": "HasValue"
+    },
+    {
+      "id": "IKT-002",
+      "name": "Byggevare ID",
+      "description": "Construction product identification according to CPR/ETIM",
+      "appliesTo": ["Walls", "Floors", "Roofs", "Doors", "Windows"],
+      "parameterName": "ByggevareID",
+      "required": true,
+      "check": "HasValue"
+    },
+    {
+      "id": "IKT-003",
+      "name": "Fire Rating",
+      "description": "Fire resistance classification for load-bearing and separating elements",
+      "appliesTo": ["Walls", "Floors", "Roofs", "Doors", "Structural Columns", "Structural Framing"],
+      "parameterName": "FireRating",
+      "required": true,
+      "check": "HasValue"
+    },
+    {
+      "id": "IKT-004",
+      "name": "Acoustic Rating",
+      "description": "Sound insulation requirements for separating elements",
+      "appliesTo": ["Walls", "Floors", "Doors"],
+      "parameterName": "AcousticRating",
+      "required": false,
+      "check": "HasValue"
+    },
+    {
+      "id": "IKT-005",
+      "name": "U-Value",
+      "description": "Thermal transmittance for envelope elements",
+      "appliesTo": ["Walls", "Roofs", "Floors", "Windows", "Doors"],
+      "parameterName": "ThermalTransmittance",
+      "required": true,
+      "check": "HasValue"
+    },
+    {
+      "id": "IKT-006",
+      "name": "Material Specifications",
+      "description": "Primary material must be specified",
+      "appliesTo": ["Walls", "Floors", "Roofs", "Doors", "Windows", "Structural Columns", "Structural Framing"],
+      "parameterName": "Material",
+      "required": true,
+      "check": "HasValue"
+    },
+    {
+      "id": "IKT-007",
+      "name": "Load Bearing Capacity",
+      "description": "Structural load capacity documentation",
+      "appliesTo": ["Structural Columns", "Structural Framing", "Floors", "Walls"],
+      "parameterName": "LoadBearing",
+      "required": true,
+      "check": "HasValue"
+    },
+    {
+      "id": "IKT-008",
+      "name": "Manufacturer",
+      "description": "Product manufacturer information",
+      "appliesTo": ["Mechanical Equipment", "Electrical Equipment", "Lighting Fixtures", "Windows", "Doors"],
+      "parameterName": "Manufacturer",
+      "required": false,
+      "check": "HasValue"
+    },
+    {
+      "id": "IKT-009",
+      "name": "System Classification",
+      "description": "MEP system classification for technical installations",
+      "appliesTo": ["Mechanical Equipment", "Ducts", "Pipes", "Electrical Equipment", "Cable Trays"],
+      "parameterName": "SystemClassification",
+      "required": true,
+      "check": "HasValue"
+    },
+    {
+      "id": "IKT-010",
+      "name": "Level Reference",
+      "description": "Element must be associated with a building level",
+      "appliesTo": ["Walls", "Floors", "Roofs", "Doors", "Windows", "Structural Columns", "Mechanical Equipment", "Lighting Fixtures"],
+      "parameterName": "Level",
+      "required": true,
+      "check": "HasReference"
+    }
+  ],
+  "criticalParameters": [
+    "BIM7AA_TypeCode",
+    "FireRating",
+    "ThermalTransmittance",
+    "Level"
+  ],
+  "exportRequirements": {
+    "ifcVersion": "IFC4",
+    "includeProperties": true,
+    "includeClassifications": true,
+    "coordinateSystem": "EPSG:25832",
+    "originPoint": "Project Base Point"
+  }
+}

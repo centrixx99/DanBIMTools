@@ -1,0 +1,187 @@
+{
+  "version": "2024",
+  "description": "Energikrav (Energy requirements) per Bygningsreglementet 2018",
+  "regulations": [
+    {
+      "code": "BR18-E1",
+      "name": "Primærenergiforbrug",
+      "description": "Total primary energy consumption requirements",
+      "buildingTypes": [
+        {
+          "type": "Bolig",
+          "maxPrimaryEnergy": 30,
+          "unit": "kWh/m²/år",
+          "notes": "Low-energy building requirement"
+        },
+        {
+          "type": "Kontor",
+          "maxPrimaryEnergy": 35,
+          "unit": "kWh/m²/år",
+          "notes": "Office buildings"
+        },
+        {
+          "type": "Skole",
+          "maxPrimaryEnergy": 35,
+          "unit": "kWh/m²/år",
+          "notes": "Educational buildings"
+        },
+        {
+          "type": "Hospital",
+          "maxPrimaryEnergy": 55,
+          "unit": "kWh/m²/år",
+          "notes": "Higher due to 24/7 operation"
+        },
+        {
+          "type": "Detailhandel",
+          "maxPrimaryEnergy": 50,
+          "unit": "kWh/m²/år",
+          "notes": "Retail"
+        }
+      ]
+    },
+    {
+      "code": "BR18-E2",
+      "name": "U-værdier (Thermal transmittance)",
+      "description": "Maximum U-values for building envelope elements",
+      "appliesTo": ["Walls", "Roofs", "Floors", "Windows", "Doors"],
+      "requirements": [
+        {
+          "element": "Ydervægge",
+          "maxUValue": 0.18,
+          "unit": "W/m²K",
+          "notes": "New construction 2021+"
+        },
+        {
+          "element": "Tage",
+          "maxUValue": 0.13,
+          "unit": "W/m²K",
+          "notes": "Flade tage"
+        },
+        {
+          "element": "Tag mod ubevarmet rum",
+          "maxUValue": 0.18,
+          "unit": "W/m²K",
+          "notes": "Top floor ceilings"
+        },
+        {
+          "element": "Gulve mod ubevarmet rum/jord",
+          "maxUValue": 0.13,
+          "unit": "W/m²K",
+          "notes": "Ground floors"
+        },
+        {
+          "element": "Vinduer, døre med glas",
+          "maxUValue": 0.80,
+          "unit": "W/m²K",
+          "notes": "Including frame"
+        },
+        {
+          "element": "Yderdøre",
+          "maxUValue": 1.20,
+          "unit": "W/m²K",
+          "notes": "Solid doors"
+        },
+        {
+          "element": "Tagvinduer",
+          "maxUValue": 0.80,
+          "unit": "W/m²K",
+          "notes": "Skylights"
+        }
+      ]
+    },
+    {
+      "code": "BR18-E3",
+      "name": "Lufttæthed",
+      "description": "Air tightness requirements",
+      "maxAirChanges": 0.5,
+      "unit": "h⁻¹",
+      "measurement": "q50 (measured at 50 Pa)",
+      "notes": "Maximum air leakage for new buildings"
+    },
+    {
+      "code": "BR18-E4",
+      "name": "Varmeinstallation",
+      "description": "Heating system requirements",
+      "requirements": [
+        {
+          "parameter": "Distribution temperature",
+          "maxValue": 55,
+          "unit": "°C",
+          "notes": "Maximum supply temperature"
+        },
+        {
+          "parameter": "Efficiency",
+          "minValue": 85,
+          "unit": "%",
+          "notes": "Heating system efficiency"
+        }
+      ]
+    },
+    {
+      "code": "BR18-E5",
+      "name": "Varmt brugsvand",
+      "description": "Domestic hot water requirements",
+      "requirements": [
+        {
+          "parameter": "Cylinder loss",
+          "maxValue": 12,
+          "unit": "kWh/m²/år",
+          "notes": "Hot water tank losses"
+        },
+        {
+          "parameter": "Circulation loss",
+          "maxValue": 10,
+          "unit": "kWh/m²/år",
+          "notes": "Hot water circulation losses"
+        }
+      ]
+    },
+    {
+      "code": "BR18-E6",
+      "name": "Belysning",
+      "description": "Lighting efficiency requirements",
+      "minEfficacy": 80,
+      "unit": "lm/W",
+      "notes": "Luminous efficacy of lighting"
+    }
+  ],
+  "elementEnergyRequirements": {
+    "Ydervæg": {
+      "U_max": "0.18 W/m²K",
+      "typicalValues": {
+        "Lightweight": "0.15-0.20",
+        "Heavyweight": "0.18-0.25"
+      }
+    },
+    "Tag": {
+      "U_max": "0.13 W/m²K",
+      "notes": "Insulated roof structures"
+    },
+    "Vindue": {
+      "U_max": "0.80 W/m²K",
+      "g_value": "0.50-0.65",
+      "notes": "Total window including frame"
+    },
+    "Dør": {
+      "U_max": "1.20 W/m²K",
+      "notes": "Solid doors"
+    }
+  },
+  "certificationLevels": {
+    "BR": {
+      "description": "Bygningsreglementet minimum",
+      "primaryEnergy": 30,
+      "suitableFor": "All new construction"
+    },
+    "Lavenergi": {
+      "description": "Low energy class 2021",
+      "primaryEnergy": 20,
+      "suitableFor": "Energy-efficient construction"
+    },
+    "Passivhus": {
+      "description": "Passive house standard",
+      "primaryEnergy": 15,
+      "suitableFor": "Ultra-low energy buildings"
+    }
+  }
+}

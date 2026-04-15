@@ -1,0 +1,328 @@
+{
+  "version": "1.0",
+  "source": "Molio IKT-specifikationer A102 (2019) + BIM Database",
+  "description": "IKT-ydelse specifikationer baseret på YBL 2018 og BEK 118/119",
+  "specifications": [
+    {
+      "code": "4.0",
+      "name": "IKT-ledelse",
+      "description": "Koordinering og styring af IKT-ydelser på projektet",
+      "yblReference": "2.2",
+      "models": ["Model A", "Model B", "Model P"],
+      "deliverables": [
+        "Udarbejdelse af IKT-procesmanual",
+        "Løbende opdatering af IKT-procesmanual",
+        "Koordinering af digitale leverancer",
+        "Kvalitetssikring af IKT-leverancer"
+      ],
+      "compliance": "BEK 118/119 §4 - Strukturering af digitale bygningsobjekter"
+    },
+    {
+      "code": "4.1",
+      "name": "Klassifikation",
+      "description": "Klassificering af bygningsdele og rum",
+      "yblReference": "9.1",
+      "models": ["Model A", "Model B", "Model P"],
+      "classificationSystems": [
+        {
+          "system": "BIM7AA",
+          "version": "3.2",
+          "description": "Dansk bygningsdel typekodning",
+          "url": "www.BIM7AA.com"
+        },
+        {
+          "system": "CCS",
+          "description": "Construction Classification System"
+        },
+        {
+          "system": "DBK",
+          "description": "Dansk Byggeklassifikation"
+        }
+      ],
+      "requirements": [
+        "Alle bygningsdele skal have unik typekode",
+        "Rum skal klassificeres efter funktion",
+        "Arealberegninger skal følge gældende standarder",
+        "Klassifikation skal understøtte mængdeudtræk"
+      ]
+    },
+    {
+      "code": "4.2",
+      "name": "Digital kommunikation",
+      "description": "Digital udveksling af information mellem parter",
+      "yblReference": "9.2",
+      "models": ["Model A", "Model B", "Model P"],
+      "formats": [
+        {
+          "format": "IFC",
+          "version": "2x3 / 4",
+          "description": "Industry Foundation Classes",
+          "usage": "Modeludveksling og koordinering"
+        },
+        {
+          "format": "PDF/A",
+          "description": "Arkiveringsformat",
+          "usage": "Tegningsfiler og dokumenter"
+        },
+        {
+          "format": "DWG",
+          "description": "AutoCAD format",
+          "usage": "2D tegningsfiler"
+        }
+      ],
+      "requirements": [
+        "Alle parter skal anvende aftalt filformat",
+        "Udveksling via fællesplatform (fx BIMserver)",
+        "Versionsstyring af alle filer",
+        "Tilgængelighed 24/7 for projektparter"
+      ]
+    },
+    {
+      "code": "4.3",
+      "name": "Etablering af kommunikationsplatform",
+      "description": "Opbygning af digital samarbejdsplatform",
+      "yblReference": "9.3",
+      "models": ["Model A", "Model B", "Model P"],
+      "requirements": [
+        "Platform skal understøtte filhåndtering",
+        "Adgangsstyring efter projektroller",
+        "Versionskontrol og historik",
+        "Notifikation ved nye filer/revisioner",
+        "Sikkerhedskopiering og backup"
+      ]
+    },
+    {
+      "code": "4.4",
+      "name": "Digital projektering",
+      "description": "3D-modellering og koordinering",
+      "yblReference": "9.4",
+      "models": ["Model A", "Model B", "Model P"],
+      "modelRequirements": [
+        {
+          "discipline": "Arkitekt",
+          "lod": "LOD 200-400",
+          "requirements": ["Bygningsgeometri", "Rum", "Arealer", "Vinduer og døre"]
+        },
+        {
+          "discipline": "Konstruktion",
+          "lod": "LOD 200-400",
+          "requirements": ["Bærende konstruktioner", "Fundamenter", "Dæk", "Søjler og bjælker"]
+        },
+        {
+          "discipline": "VVS",
+          "lod": "LOD 200-350",
+          "requirements": ["Ventilation", "Varme", "Sanitet", "Sprinkler"]
+        },
+        {
+          "discipline": "El",
+          "lod": "LOD 200-350",
+          "requirements": ["Belysning", "Stærkstrøm", "Svagstrøm", "IHC"]
+        }
+      ],
+      "clashDetection": {
+        "required": true,
+        "frequency": "Løbende + milepæle",
+        "tolerance": "5-10 mm afhængig af disciplin"
+      }
+    },
+    {
+      "code": "4.5",
+      "name": "Digitalt udbud og tilbud",
+      "description": "Digital tilbudsafgivelse og evaluering",
+      "yblReference": "9.5",
+      "models": ["Model A", "Model B", "Model P"],
+      "requirements": [
+        "Tilbud baseret på 3D-model",
+        "Mængdeudtræk fra model",
+        "Digital tilbudsliste",
+        "Sammenligning af tilbud"
+      ]
+    },
+    {
+      "code": "4.6",
+      "name": "Mængdefortegnelse",
+      "description": "Automatisk mængdeudtræk fra model",
+      "yblReference": "9.6",
+      "models": ["Model A", "Model B", "Model P"],
+      "quantities": [
+        {
+          "category": "Masse",
+          "unit": "m³",
+          "description": "Concrete, fill, excavation"
+        },
+        {
+          "category": "Areal",
+          "unit": "m²",
+          "description": "Floors, walls, roofs, facades"
+        },
+        {
+          "category": "Længde",
+          "unit": "m",
+          "description": "Pipes, cables, ducts, rails"
+        },
+        {
+          "category": "Styk",
+          "unit": "stk",
+          "description": "Doors, windows, equipment, fixtures"
+        },
+        {
+          "category": "Vægt",
+          "unit": "kg",
+          "description": "Steel, reinforcement"
+        }
+      ],
+      "requirements": [
+        "Mængder skal kunne udtrækkes automatisk",
+        "Klassifikation kræves for præcis udtræk",
+        "Mængder skal kunne grupperes efter fag/disciplin",
+        "Integration med tilbudssystem"
+      ]
+    },
+    {
+      "code": "4.7",
+      "name": "Digital aflevering",
+      "description": "Digital aflevering af projektmateriale",
+      "yblReference": "9.7",
+      "models": ["Model A", "Model B", "Model P"],
+      "deliverables": [
+        {
+          "type": "Bygningsmodel",
+          "format": "IFC",
+          "lod": "LOD 300-400",
+          "description": "Færdig projektmodel"
+        },
+        {
+          "type": "Tegninger",
+          "format": "PDF/A",
+          "description": "Godkendte tegninger"
+        },
+        {
+          "type": "Dokumentation",
+          "format": "PDF/A",
+          "description": "Manualer, certifikater, testrapporter"
+        },
+        {
+          "type": "Mængder",
+          "format": "Excel/PDF",
+          "description": "Endelige mængdeudtræk"
+        }
+      ],
+      "requirements": [
+        "Model skal være georefereret",
+        "Alle objekter skal være klassificeret",
+        "Egenskabsdata skal være komplet",
+        "IFC-filer skal være validerede",
+        "Drift og vedligehold skal kunne importere data"
+      ]
+    },
+    {
+      "code": "4.8",
+      "name": "Digitalisering af eksisterende forhold",
+      "description": "3D-scanning og modelopbygning af eksisterende byggeri",
+      "yblReference": "9.8",
+      "models": ["Model P"],
+      "technologies": [
+        {
+          "type": "3D Scanning",
+          "description": "Laser scanning af eksisterende bygning",
+          "accuracy": "±5-10mm"
+        },
+        {
+          "type": "Fotogrammetri",
+          "description": "Drone/ground-based photogrammetry",
+          "accuracy": "±20-50mm"
+        },
+        {
+          "type": "BIM-model fra scan",
+          "description": "Oprettelse af BIM ud fra scan data",
+          "lod": "LOD 200-300"
+        }
+      ]
+    },
+    {
+      "code": "4.9",
+      "name": "Særlige visualiseringer",
+      "description": "3D-visualiseringer, animationer, VR/AR",
+      "yblReference": "9.9",
+      "models": ["Model P"],
+      "types": [
+        {
+          "type": "Stillbilleder",
+          "description": "Photorealistiske renders",
+          "deliverables": ["Eksteriør", "Interiør", "Detaljer"]
+        },
+        {
+          "type": "Animation",
+          "description": "Fly-throughs og walk-throughs",
+          "format": "MP4/AVI"
+        },
+        {
+          "type": "VR/AR",
+          "description": "Virtual og Augmented Reality",
+          "platforms": ["HTC Vive", "Oculus", "HoloLens", "Mobile AR"]
+        },
+        {
+          "type": "Sollys analyse",
+          "description": "Solstudier og skyggekast",
+          "tools": ["Revit Solar Study", "Diva", "Ladybug"]
+        }
+      ]
+    },
+    {
+      "code": "4.10",
+      "name": "Andre digitale ydelser",
+      "description": "Øvrige digitale ydelser ikke dækket af andre specifikationer",
+      "yblReference": "9.10",
+      "models": ["Model P"]
+    }
+  ],
+  "models": {
+    "Model A": {
+      "description": "Virksomhedernes praksis i branchen",
+      "target": "Bygherre uden specifikke krav",
+      "freedom": "Høj grad af metodefrihed til rådgiver",
+      "compliance": "Overholder IKT-bekendtgørelsen"
+    },
+    "Model B": {
+      "description": "Molio standarder og værktøjer",
+      "target": "Anbefalet af Molio",
+      "features": [
+        "Fleste fælles implementerede standarder",
+        "Foruddefinerede metoder",
+        "Overholder IKT-bekendtgørelsen"
+      ],
+      "recommended": true
+    },
+    "Model P": {
+      "description": "Projektspecifik tilpasset model",
+      "target": "Bygherre med specifikke krav",
+      "requirements": [
+        "Bygherre skal definere egne krav",
+        "Kan tage udgangspunkt i Model A eller B",
+        "Nødvendige tekniske forudsætninger skal tilvejebringes"
+      ]
+    }
+  },
+  "legislation": {
+    "BEK_118": {
+      "title": "Bekendtgørelse om anvendelse af IKT i offentligt byggeri",
+      "number": "BEK nr. 118 af 06/02/2013",
+      "scope": "Offentligt byggeri",
+      "keyRequirements": [
+        "§4: Strukturering af digitale bygningsobjekter",
+        "Krav om digital aflevering",
+        "Obligatorisk 3D-modellering i visse faser"
+      ]
+    },
+    "BEK_119": {
+      "title": "Bekendtgørelse om anvendelse af IKT i alment byggeri",
+      "number": "BEK nr. 119 af 07/02/2013",
+      "scope": "Alment byggeri"
+    },
+    "YBL_2018": {
+      "title": "Ydelsesbeskrivelse for Byggeri og Landskab 2018",
+      "publisher": "FRI og DANSKE ARK",
+      "iktYdelser": ["2.2", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7", "9.8", "9.9", "9.10"]
+    }
+  }
+}

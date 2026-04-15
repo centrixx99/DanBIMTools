@@ -1,0 +1,99 @@
+{
+  "version": "1.0",
+  "source": "IKT-bekendtgørelsen + BIM7AA",
+  "description": "IKT parameterkrav til BIM-modeller per Bygningsreglementet",
+  "requirements": [
+    {
+      "id": "IKT-ALL-001",
+      "category": "Alle elementer",
+      "parameter": "GlobalId",
+      "required": true,
+      "description": "Unikt IFC ID",
+      "alternatives": []
+    },
+    {
+      "id": "IKT-ALL-002",
+      "category": "Alle elementer",
+      "parameter": "Name",
+      "required": true,
+      "description": "Navn på element",
+      "alternatives": []
+    },
+    {
+      "id": "IKT-STR-001",
+      "category": "Konstruktion",
+      "parameter": "Structural",
+      "required": true,
+      "description": "Bærende markering",
+      "alternatives": ["IsStructural", "StructuralUsage"]
+    },
+    {
+      "id": "IKT-WALL-001",
+      "category": "Vægge",
+      "parameter": "Area",
+      "required": true,
+      "description": "Areal",
+      "alternatives": ["Areal", "Area (Gross)"]
+    },
+    {
+      "id": "IKT-WALL-002",
+      "category": "Vægge",
+      "parameter": "FireRating",
+      "required": false,
+      "description": "Brandklassificering",
+      "alternatives": ["Fire Rating", "Brandklassificering"]
+    },
+    {
+      "id": "IKT-DOOR-001",
+      "category": "Døre/Vinduer",
+      "parameter": "Width",
+      "required": true,
+      "description": "Bredde",
+      "alternatives": ["Bredde", "Rough Width"]
+    },
+    {
+      "id": "IKT-DOOR-002",
+      "category": "Døre/Vinduer",
+      "parameter": "Height",
+      "required": true,
+      "description": "Højde",
+      "alternatives": ["Højde", "Rough Height"]
+    },
+    {
+      "id": "IKT-MEP-001",
+      "category": "MEP",
+      "parameter": "System Type",
+      "required": true,
+      "description": "Systemtype",
+      "alternatives": ["SystemType", "System Classification", "SystemClassification"]
+    },
+    {
+      "id": "IKT-MEP-002",
+      "category": "MEP",
+      "parameter": "Flow",
+      "required": false,
+      "description": "Luftmængde/vandflow",
+      "alternatives": ["Air Flow", "L/s", "Flow Rate"]
+    },
+    {
+      "id": "IKT-LEVEL-001",
+      "category": "Alle elementer",
+      "parameter": "Level",
+      "required": true,
+      "description": "Etage reference",
+      "alternatives": ["Reference Level", "Level ID"]
+    }
+  ],
+  "exclusionCategories": [
+    "Lines",
+    "Dimensions",
+    "Text Notes",
+    "Reference Planes",
+    "Cameras",
+    "Scope Boxes",
+    "Section Boxes",
+    "Annotations",
+    "Raster Images",
+    "Imports in Families"
+  ]
+}
